@@ -1,0 +1,32 @@
+<p>Listado de Libros</p>
+
+<table class="table table-bordered table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Id </th>
+            <th>Libro </th>
+            <th>Autor </th>
+            <th>Genero</th>
+            <th>Quien lo tiene</th>
+            <th>Accion</th>
+            <th>Prestar a: </th>
+            <!-- <th>Descripcion</th> -->
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let item of libro">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.author}}</td>
+            <td>{{item.gender}}</td>
+            <td>{{item.lended}}</td>
+            <td> <button type="submit"> Prestar</button>  </td>
+            <td>
+                <form  (ngSubmit) = 'prestarLibro()'>
+                  <input type="text" class="form-control" [(ngModel)]='lended'>
+                 </form>
+            </td>
+           
+        </tr>
+    </tbody>
+</table>
